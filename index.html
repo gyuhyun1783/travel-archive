@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Photo Archive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Personal Travel Archive</p>
+    <h1>여행 사진 전시실</h1>
+    <p class="intro">지금까지 다녀온 곳과 앞으로 채워질 여행의 장면들을 모아두는 작은 사진 아카이브입니다.</p>
+  </header>
+
+  <main>
+    <section id="trip-list-view" class="view is-active" aria-labelledby="trip-list-title">
+      <div class="section-head">
+        <div>
+          <h2 id="trip-list-title">여행지</h2>
+          <p id="trip-count" class="muted"></p>
+        </div>
+        <div class="filter-tabs" role="tablist" aria-label="여행지 필터">
+          <button class="filter-button is-active" type="button" data-filter="all">전체</button>
+          <button class="filter-button" type="button" data-filter="visited">방문한 곳</button>
+          <button class="filter-button" type="button" data-filter="planned">예정된 곳</button>
+        </div>
+      </div>
+
+      <div id="trip-grid" class="trip-grid"></div>
+    </section>
+
+    <section id="gallery-view" class="view" aria-labelledby="gallery-title">
+      <button id="back-button" class="back-button" type="button">전체 여행지 보기</button>
+      <div class="gallery-head">
+        <p id="gallery-meta" class="eyebrow"></p>
+        <h2 id="gallery-title"></h2>
+        <p id="gallery-description" class="intro"></p>
+      </div>
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-toolbar">
+      <button id="lightbox-close" class="icon-button" type="button" aria-label="닫기">×</button>
+    </div>
+    <button id="lightbox-prev" class="lightbox-nav lightbox-prev" type="button" aria-label="이전 사진">‹</button>
+    <figure class="lightbox-frame">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button id="lightbox-next" class="lightbox-nav lightbox-next" type="button" aria-label="다음 사진">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
